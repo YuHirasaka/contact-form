@@ -24,7 +24,7 @@
                 <div class="form__error">
                     <!-- エラーメッセージが入ります -->
                         @error('name')
-                        {{ $name}}
+                        {{ $message }}
                         @enderror
                 </div>
             </div>
