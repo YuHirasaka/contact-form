@@ -1,11 +1,10 @@
 # 環境構築
 
-## Dockerビルド
-
 ```bash
 1. git clone git@github.com:YuHirasaka/contact-form.git
 2. docker compose up -d --build
 ```
+
 ---
 
 ## Laravel環境構築
@@ -34,6 +33,8 @@
 
 - 開発環境：http://localhost/
 - ユーザー登録：http://localhost/register/
-- - phpMyAdmin：http://localhost:8080/
+- phpMyAdmin：http://localhost:8080/
 
 ## ER図
+
+![ER図](docs/index.drawio.png)
