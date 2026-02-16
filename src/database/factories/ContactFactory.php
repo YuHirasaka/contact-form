@@ -23,10 +23,19 @@ class ContactFactory extends Factory
         ];
         $category = $this->faker->numberBetween(1,5);
 
+        $gender = $this->faker->randomElement([1,2,3]);
+
+        $firstName = match($gender) {
+            1 => $this->faker->firstName('male'),
+            2 => $this->faker->firstName('female'),
+            3 => $this->faker->firstName,
+        };
+
+
         return [
             'first_name' => $this->faker->lastName,
-            'last_name' => $this->faker->firstName,
-            'gender' => $this->faker->randomElement([1,2,3]),
+            'last_name' => $firstName,
+            'gender' => $gender,
             'email' => $this->faker->safeEmail,
             'tel' => $this->faker->numerify('080########'),
             'address' => $this->faker->address,
