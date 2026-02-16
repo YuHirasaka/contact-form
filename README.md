@@ -1,19 +1,14 @@
-# 開発環境テンプレート
+# 環境構築
 
-MySQL・phpMyAdmin を含む Laravel 開発環境のテンプレート 
-
----
-
-## 環境構築
+## Dockerビルド
 
 ```bash
-1. git clone リポジトリURL
+1. git clone git@github.com:YuHirasaka/contact-form.git
 2. docker compose up -d --build
 ```
+---
 
-＊Mysqlは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
-
-Laravel環境構築
+## Laravel環境構築
 
 ```bash
   1. docker compose exec php bash
@@ -38,4 +33,7 @@ Laravel環境構築
 ## URL
 
 - 開発環境：http://localhost/
-- phpMyAdmin：http://localhost:8080/
+- ユーザー登録：http://localhost/register/
+- - phpMyAdmin：http://localhost:8080/
+
+## ER図
