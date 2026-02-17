@@ -1,0 +1,176 @@
+.contact-form__content {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1512px;
+}
+
+.contact-form__heading h2 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: normal;
+    color: #8b7976;
+    font-family: "Inika",serif;
+}
+
+.form {
+    margin: 0 auto;
+    width: 972px;
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 40px;
+}
+
+.form__group-title {
+    width: 25%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.form__group-content {
+    width: 70%;
+}
+
+.form__label {
+    color: #8b7976;
+    width: 25%;
+    text-align: left;
+}
+
+.form__label--required {
+    margin-left: 5px;
+    color: #ff9494;
+}
+
+input,
+textarea,
+select {
+    border: none;
+    outline: none;
+    background-color: #f4f4f4;
+    color: #beb1a6;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.form__field {
+    display: flex;
+    align-items: center;
+}
+.form__field--name {
+    width: 100%;
+    gap: 40px;
+    flex: 1;
+}
+.form__field--tel input {
+    flex:1;
+    text-align: center;
+}
+
+/* ===============================
+   Item (input wrapper)
+=============================== */
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form__item-input {
+    width: 100%;
+}
+
+.form__item-select {
+    width: 50%;
+}
+
+.form__item-textarea {
+    height: 180px;
+}
+
+
+/* ===============================
+   Radio
+=============================== */
+
+.form__radio {
+    display: flex;
+    margin-left: 30px;
+    gap: 40px;
+}
+
+.form__radio-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 6px;
+    white-space: nowrap;
+    color: #8b7969;
+}
+
+.form__radio-item input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8b7969;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+.form__radio-item input:checked {
+    background-color: #8b7969;
+}
+
+/* ===============================
+   Separator
+=============================== */
+
+.form__sep {
+    flex: 0 0 auto;
+    margin: 0 10px;
+    align-items: center
+}
+
+
+/* ===============================
+   Error
+=============================== */
+
+.form__error {
+    margin-top: 6px;
+    font-size: 12px;
+    text-align: left;
+    color: #ff0000;
+}
+
+
+/* ===============================
+   Actions
+=============================== */
+
+.form__actions {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.form__button {
+    padding: 10px;
+    width: 160px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button--submit {
+    background-color: #82756a;
+    color: #fff;
+    font-size: 20px;
+}
