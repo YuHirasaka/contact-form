@@ -1,0 +1,26 @@
+body {
+    font-family: "Noto Sans JP",
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.header {
+    background: #fff;
+}
+
+.header__inner {
+    position: relative;
+    margin: 0 auto;
+    padding: 10px 15px;
+    max-width: 1512px;
+    border-bottom: 1px solid #e0dfde;
+    text-align: center;
+    font-family: "Inika",
+            serif;
+}
+
+.header__logo a {
+    color: #8b7976;
+    font-size: 40px;
+    text-decoration: none;
+}
