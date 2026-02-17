@@ -1,0 +1,152 @@
+/* =========================
+   Admin Page
+========================= */
+.admin {
+    margin: 0 auto;
+    padding: 60px 15px;
+    max-width: 1230px;
+}
+
+.admin__heading {
+    margin-bottom: 50px;
+    text-align: center;
+    color: #8b7976;
+}
+
+.admin__title h2 {
+    font-size: 35px;
+    font-family: "Inika", serif;
+    font-weight: normal;
+}
+
+
+/* =========================
+   Search Area
+========================= */
+.admin__search {
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.admin__search-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    width: 100%;
+}
+
+.admin__input {
+    border: 1px solid #e3ded9;
+    padding: 5px 10px;
+}
+
+.admin__input--text {
+    background: #fbfbfb;
+    flex: 4;
+}
+
+.admin__input--date {
+    background: #f4f4f4;
+    color: #8b7976;
+}
+
+.admin__select {
+    border: 1px solid #e3ded9;
+    background: #f4f4f4;
+    color: #8b7976;
+    padding: 5px 10px;
+}
+
+.admin__select--gender {}
+
+.admin__select--category {
+    flex: 1;
+}
+
+.admin__button {
+    padding: 8px 20px;
+    color: #fff;
+}
+
+.admin__button--search {
+    background: #82756a;
+    border: 1px solid #8b7969;
+}
+
+.admin__button--reset {
+    background: #d9c6b5;
+    border: 1px solid #d9c6b5;
+}
+
+.admin__button--export {
+    background: rgba(225, 219, 214, 0.6);
+    color: #8b7969;
+    text-decoration: none;
+}
+
+
+/* =========================
+   Tool Bar
+========================= */
+.admin__toolber {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.admin__pagination {}
+
+
+/* =========================
+   Table
+========================= */
+.admin-table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.admin-table__inner {
+    margin: 20px auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table__row {
+    border: 1px solid #e0dfde;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 10px;
+}
+
+table th:first-of-type,
+table td:first-of-type {
+    padding-left: 40px;
+}
+
+table th:last-of-type,
+table td:last-of-type {
+    padding-right: 0;
+}
+
+.admin-table__header {
+    background: #8b7969;
+    color: #fff;
+}
+
+.admin-table__item {
+    color: #8b7969;
+}
+
+.admin-table__detail-button {
+    font-size: 18px;
+    background: rgba(244, 244, 244, 0.4);
+    border: 1px solid rgba(217, 198, 181, 0.6);
+    color: #d9c6b5;
+    margin-right: 0;
+}

@@ -1,0 +1,100 @@
+/* =========================
+   Auth Page
+========================= */
+body {
+    background: #f1ece7;
+}
+.auth {
+    padding: 20px 15px;
+    max-width: 1512px;
+    margin: 0 auto;
+}
+
+.auth__title h2{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: normal;
+    color: #8b7976;
+    font-family: "Inika", serif;
+}
+
+
+/* =========================
+   Auth Card
+========================= */
+
+.auth-card {
+    margin: 0 auto;
+    width: 736px;
+}
+
+
+/* =========================
+   Auth Form
+========================= */
+
+.auth-form {
+    background: #fff;
+    border: 1px solid #c5b9b0;
+    border-radius: 3px;
+    padding: 60px 100px;
+}
+
+.auth-form__group {
+    width: 445px;
+    margin: 40px auto;
+}
+
+.auth-form__label {
+    margin-bottom: 30px;
+    color: #8b7976;
+    font-size: 25px;
+}
+
+.auth-form__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.auth-form__input {
+    width: 100%;
+}
+
+.auth-form__input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #f4f4f4;
+    color: #beb1a6;
+    padding: 14px 20px;
+
+}
+
+.auth-form__error {
+    color: red;
+    font-size: 14px;
+}
+
+
+/* =========================
+   Auth Button
+========================= */
+
+.auth-form__button {
+    text-align: center;
+    margin: 10px;
+}
+
+.auth-form__button--submit {
+    margin-top: 30px;
+    padding: 10px 40px;
+    background: #82756a;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

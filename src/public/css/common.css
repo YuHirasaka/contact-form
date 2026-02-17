@@ -15,12 +15,38 @@ body {
     max-width: 1512px;
     border-bottom: 1px solid #e0dfde;
     text-align: center;
-    font-family: "Inika",
-            serif;
+    font-family: "Inika",serif;
 }
 
 .header__logo a {
     color: #8b7976;
     font-size: 40px;
     text-decoration: none;
+}
+
+.header__logo {
+    color: #8b7976;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.header__auth {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.header__form {
+    margin: 0;
+}
+
+.header__button {
+    background: rgba(227, 222, 217, 0.6);
+    color: #d9c6b5;
+    font-family: "Inika",serif;
+    font-size: 20px;
+    border: 1px solid #d9c6b5;
+    padding: 5px 20px;
+    cursor: pointer;
 }
