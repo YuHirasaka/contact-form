@@ -19,13 +19,11 @@
                 FashionablyLate
             </a>
             <div class="header__auth">
-                @auth
-                    <form action="{{ route('register'} }" class="header__form">
-                    @csrf
-                        <button class="header__button">
-                            Register
-                        </button>
-                    </form>
+                @if (request()->routeIs('login'))
+                    <a href="{{ route('register') }}" class="header__button">Register</a>
+                @elseif (request()->routeIs('register'))
+                    <a href="{{ route('login') }}" class="header__button">Login</a>
+                @endif
             </div>
         </div>
     </header>
