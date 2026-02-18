@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.auth')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="auth-card">
-        <form action="/login" class="auth-form" method="">
+        <form action="/login" class="auth-form" method="post" novalidate>
             @csrf
             <div class="auth-form__group">
                 <span class="auth-form__label">メールアドレス</span>

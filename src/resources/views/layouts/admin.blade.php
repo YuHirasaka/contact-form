@@ -18,14 +18,16 @@
             <a href="/" class="header__logo">
                 FashionablyLate
             </a>
+            @if (Auth::check())
             <div class="header__auth">
-                <form action="/logout" class="header__form">
+                <form action="/logout" class="header__form" method="post">
                 @csrf
                     <button class="header__button">
                         logout
                     </button>
                 </form>
             </div>
+            @endif
         </div>
     </header>
     <main>
