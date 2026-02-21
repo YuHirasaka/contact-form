@@ -3,12 +3,11 @@
 ========================= */
 .admin {
     margin: 0 auto;
-    padding: 60px 15px;
     max-width: 1230px;
 }
 
 .admin__heading {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
     color: #8b7976;
 }
