@@ -54,7 +54,7 @@
     </form>
 
     <div class="admin__toolber">
-        <a href="" class="admin__button admin__button--export">エクスポート</a>
+        <a href="{{ route('admin.export', request()->except('page')) }}" class="admin__button admin__button--export">エクスポート</a>
         <nav class="admin__pagination">
             <!--リンク -->
             <div class="admin__pagination-page">
