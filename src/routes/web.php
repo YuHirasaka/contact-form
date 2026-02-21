@@ -31,6 +31,9 @@ Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/search', [AdminController::class, 'search'])->name('admin.search');
+    Route::get('/reset', [AdminController::class, 'reset'])->name('admin.reset');
+    Route::post('/delete', [AdminController::class, 'delete'])->name('admin.delete');
 });
 
 
