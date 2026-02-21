@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    @if (!request()->routeIs('contact.thanks'))
     <header class="header">
         <div class="header__inner">
             <h1 class="header__logo">
@@ -20,6 +21,7 @@
             </h1>
         </div>
     </header>
+    @endif
 
     <main>
         @yield('content')
