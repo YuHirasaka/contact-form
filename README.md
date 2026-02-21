@@ -1,4 +1,6 @@
-# 環境構築
+# お問い合わせフォーム
+
+## 環境構築
 
 ```bash
 1. git clone git@github.com:YuHirasaka/contact-form.git
@@ -7,7 +9,7 @@
 
 ---
 
-## Laravel環境構築
+### Laravel環境構築
 
 ```bash
   1. docker compose exec php bash
@@ -20,7 +22,7 @@
 
 ---
 
-## 使用技術
+### 使用技術
 
 - php 8.1.34
 - nginx 1.21.1
@@ -29,12 +31,12 @@
 
 ---
 
-## URL
+### URL
 
 - 開発環境：http://localhost/
 - ユーザー登録：http://localhost/register/
 - phpMyAdmin：http://localhost:8080/
 
-## ER図
+### ER図
 
 ![ER図](docs/index.png)
