@@ -64,7 +64,6 @@
 
 input[type="date"]::-webkit-calendar-picker-indicator{
     opacity: 0;
-    cursor: pointer;
 }
 
 .admin__select {
@@ -113,6 +112,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     font-size: 16px;
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .admin__button--search {
@@ -220,6 +220,7 @@ table td:last-of-type {
     color: #d9c6b5;
     padding: 5px 15px;
     margin-right: 0;
+    cursor: pointer;
 }
 
 .modal {

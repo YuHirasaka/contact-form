@@ -150,8 +150,7 @@
                     <form action="/delete" method="post">
                         @csrf
                         <input type="hidden" name="contact_id" class="js-modal-contact-id">
-                        <button type="submit" class="modal__delete"
-                                onclick="return confirm('このデータを削除しますか？');">
+                        <button type="submit" class="modal__delete">
                         削除
                         </button>
                     </form>
