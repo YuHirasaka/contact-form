@@ -79,23 +79,132 @@
                     </th>
                 </tr>
             </thead>
-
+            @foreach ($contacts as $contact)
             <tbody>
                 <tr class="admin-table__row">
-                    <td class="admin-table__item">山田 太郎
+                    <td class="admin-table__item">
+                        {{ $contact->last_name }}
+                        {{ $contact->first_name }}
                     </td>
-                    <td class="admin-table__item">男性
+                    <td class="admin-table__item">{{ $contact->gender_label }}
                     </td>
-                    <td class="admin-table__item">test@example.com
+                    <td class="admin-table__item">{{ $contact->email }}
                     </td>
-                    <td class="admin-table__item">商品の交換について
+                    <td class="admin-table__item">{{ $contact->category->content }}
                     </td>
                     <td class="admin-table__item">
-                        <button class="admin-table__detail-button">詳細</button>
+                        <button class="admin-table__detail-button js-open-modal"
+                        data-id="{{ $contact->id }}"
+                        data-name="{{ $contact->last_name }} {{ $contact->first_name}}"
+                        data-gender="{{ $contact->gender_label }}"
+                        data-email="{{ $contact->email }}"
+                        data-tel="{{ $contact->tel }}"
+                        data-address="{{ $contact->address }}"
+                        data-building="{{ $contact->building }}"
+                        data-category="{{ $contact->category->content }}"
+                        data-detail="{{ $contact->detail }}"
+                        >詳細</button>
                     </td>
                 </tr>
             </tbody>
+            @endforeach
         </table>
+        <div class="modal js-modal" aria-hidden="true">
+            <div class="modal__overlay js-close-modal"></div>
+            <div class="modal__panel" role="dialog" aria-modal="true">
+                <button type="button" class="modal__close js-close-modal" aria-label="閉じる">×</button>
+                <dl class="modal__list">
+                    <div class="modal__row">
+                        <dt class="modal__term">お名前</dt>
+                        <dd class="modal__desc js-modal-name"></dd>
+                    </div>
+                    <div class="modal__row">
+                        <dt class="modal__term">性別</dt>
+                        <dd class="modal__desc js-modal-gender"></dd>
+                    </div>
+                    <div class="modal__row">
+                        <dt class="modal__term">メールアドレス</dt>
+                        <dd class="modal__desc js-modal-email"></dd>
+                    </div>
+                    <div class="modal__row">
+                        <dt class="modal__term">電話番号</dt>
+                        <dd class="modal__desc js-modal-tel"></dd>
+                    </div>
+                    <div class="modal__row">
+                        <dt class="modal__term">住所</dt>
+                        <dd class="modal__desc js-modal-address"></dd>
+                    </div>
+                    <div class="modal__row">
+                        <dt class="modal__term">建物名</dt>
+                        <dd class="modal__desc js-modal-building"></dd>
+                    </div>
+                    <div class="modal__row">
+                        <dt class="modal__term">お問い合わせの種類</dt>
+                        <dd class="modal__desc js-modal-category"></dd>
+                    </div>
+                    <div class="modal__row modal__row--detail">
+                        <dt class="modal__term">お問い合わせ内容</dt>
+                        <dd class="modal__desc modal__desc--detail js-modal-detail"></dd>
+                    </div>
+                </dl>
+                <div class="modal__actions">
+                    <form action="/delete" method="post">
+                        @csrf
+                        <input type="hidden" name="contact_id" class="js-modal-contact-id">
+                        <button type="submit" class="modal__delete"
+                                onclick="return confirm('このデータを削除しますか？');">
+                        削除
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.querySelector('.js-modal');
+        if (!modal) return;
+
+        const openButtons = document.querySelectorAll('.js-open-modal');
+        const closeButtons = document.querySelectorAll('.js-close-modal');
+
+        const setText = (selector, text) => {
+            const el = modal.querySelector(selector);
+            if (el) el.textContent = text ?? '';
+        };
+
+        const setVal = (selector, val) => {
+            const el = modal.querySelector(selector);
+            if (el) el.value = val ?? '';
+        };
+
+        const openModal = (btn) => {
+            setText('.js-modal-name', btn.dataset.name);
+            setText('.js-modal-gender', btn.dataset.gender);
+            setText('.js-modal-email', btn.dataset.email);
+            setText('.js-modal-tel', btn.dataset.tel);
+            setText('.js-modal-address', btn.dataset.address);
+            setText('.js-modal-building', btn.dataset.building);
+            setText('.js-modal-category', btn.dataset.category);
+            setText('.js-modal-detail', btn.dataset.detail);
+            setVal('.js-modal-contact-id', btn.dataset.id);
+
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+        };
+
+        openButtons.forEach(btn => btn.addEventListener('click', () => openModal(btn)));
+        closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+        });
+        });
+        </script>
     </div>
 </div>
 @endsection
