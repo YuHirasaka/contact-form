@@ -19,13 +19,17 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $tel =  $request->input('phone1') .
-                $request->input('phone2') .
-                $request->input('phone3');
+        $contact = $request->validated();
 
-        $request->merge(['tel' => $tel]);
+        $contact['tel_joined'] = implode('', $contact['tel']);
 
-        $contact = $request->only(['last_name','first_name', 'gender','email', 'tel', 'address','building', 'category_id','detail']);
+        $genderLabels = [
+            1=>'男性',
+            2=>'女性',
+            3=>'その他',
+        ];
+
+        $contact['gender_label'] = $genderLabels[$contact['gender']] ?? '';
 
         $category = Category::find($contact['category_id']);
 
