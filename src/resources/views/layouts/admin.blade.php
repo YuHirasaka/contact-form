@@ -15,9 +15,9 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a href="/" class="header__logo">
+            <h1 class="header__logo">
                 FashionablyLate
-            </a>
+            </h1>
             @if (Auth::check())
             <div class="header__auth">
                 <form action="/logout" class="header__form" method="post">

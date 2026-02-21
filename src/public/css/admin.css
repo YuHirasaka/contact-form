@@ -1,9 +1,6 @@
-/* =========================
-   Admin Page
-========================= */
 .admin {
     margin: 0 auto;
-    max-width: 1230px;
+    max-width: 1512px;
 }
 
 .admin__heading {
@@ -18,54 +15,104 @@
     font-weight: normal;
 }
 
-
-/* =========================
-   Search Area
-========================= */
-.admin__search {
+.admin__search,
+.admin__toolbar,
+.admin-table {
+    width: 1184px;
+    max-width: 100%;
     margin: 0 auto;
-    width: 80%;
+}
+
+.admin__search {
     margin-bottom: 20px;
 }
 
 .admin__search-inner {
     display: flex;
     justify-content: space-between;
-    gap: 25px;
-    width: 100%;
+    align-items: center;
+    gap: 30px;
+    height: 50px;
+}
+
+.admin__input,
+.admin__select,
+.admin__button {
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
 }
 
 .admin__input {
     border: 1px solid #e3ded9;
     padding: 5px 10px;
+    outline: none;
 }
 
 .admin__input--text {
     background: #fbfbfb;
-    flex: 4;
+    width: 347px;
+    font-size: 16px;
 }
 
 .admin__input--date {
+    width: 148px;
+    font-size: 17px;
     background: #f4f4f4;
     color: #8b7976;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+    opacity: 0;
+    cursor: pointer;
 }
 
 .admin__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 34px;
+    padding-left: 10px;
+    background-color: #f4f4f4;
     border: 1px solid #e3ded9;
     background: #f4f4f4;
     color: #8b7976;
-    padding: 5px 10px;
+    outline: none;
 }
 
-.admin__select--gender {}
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color: #e0dfde;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.admin__select--gender {
+    width: 102px;
+    font-size: 17px;
+}
 
 .admin__select--category {
-    flex: 1;
+    width: 223px;
+    font-size: 17px;
 }
 
 .admin__button {
-    padding: 8px 20px;
+    display: inline-flex;
+    width: 102px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
     color: #fff;
+    text-decoration: none;
 }
 
 .admin__button--search {
@@ -76,30 +123,21 @@
 .admin__button--reset {
     background: #d9c6b5;
     border: 1px solid #d9c6b5;
+    text-decoration: none;
 }
 
 .admin__button--export {
+    padding: 8px 20px;
     background: rgba(225, 219, 214, 0.6);
     color: #8b7969;
     text-decoration: none;
 }
 
-
-/* =========================
-   Tool Bar
-========================= */
-.admin__toolber {
-    width: 80%;
-    margin: 0 auto;
+.admin__toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center
 }
-
-
-/* =========================
-   Pagination
-========================= */
 
 .admin__pagination {
     text-align: center;
@@ -114,13 +152,14 @@
 .pagination li a,
 .pagination li span {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 3px 10px;
     border: 1px solid #e0dfde;
     border-right: none;
     color: #8b7969;
     font-size: 18px;
     text-decoration: none;
 }
+
 .pagination li:last-child a,
 .pagination li:last-child span {
     border-right: 1px solid #e0dfde;
@@ -135,14 +174,6 @@
     opacity: 0.4;
 }
 
-/* =========================
-   Table
-========================= */
-.admin-table {
-    width: 80%;
-    margin: 0 auto;
-}
-
 .admin-table__inner {
     margin: 20px auto;
     width: 100%;
@@ -153,10 +184,14 @@
     border: 1px solid #e0dfde;
 }
 
-table th,
-table td {
+.admin-table__inner th,
+.admin-table__inner td {
     text-align: left;
     padding: 10px;
+}
+
+.admin-table__row:hover td {
+    background: rgba(139, 121, 105, 0.08);
 }
 
 table th:first-of-type,
@@ -183,10 +218,10 @@ table td:last-of-type {
     background: rgba(244, 244, 244, 0.4);
     border: 1px solid rgba(217, 198, 181, 0.6);
     color: #d9c6b5;
+    padding: 5px 15px;
     margin-right: 0;
 }
 
-/* ===== Modal base ===== */
 .modal {
     display: none;
     position: fixed;
@@ -206,15 +241,15 @@ table td:last-of-type {
 .modal__panel {
     position: relative;
     width: 805px;
+    height: 858px;
     max-width: calc(100% - 48px);
     margin: 50px auto;
     background: #fff;
     border: 1px solid #e6ded7;
-    padding: 60px 70px;
-    /* 上下左右の余白感 */
+    padding: 143px 67px;
+    box-shadow: 4px 4px 4px rgba(139, 121, 105, 0.25);
 }
 
-/* ×ボタン（右上の丸） */
 .modal__close {
     position: absolute;
     top: 18px;
@@ -225,12 +260,11 @@ table td:last-of-type {
     border: 1px solid #cfc7c0;
     background: #fff;
     color: #8b7969;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1;
     cursor: pointer;
 }
 
-/* ===== 内容（2列の整列） ===== */
 .modal__list {
     margin: 0;
     padding: 0;
@@ -239,9 +273,8 @@ table td:last-of-type {
 .modal__row {
     display: grid;
     grid-template-columns: 190px 1fr;
-    /* 左列固定、右列伸びる */
     align-items: start;
-    column-gap: 40px;
+    column-gap: 50px;
     padding: 14px 0;
 }
 
@@ -249,25 +282,22 @@ table td:last-of-type {
     margin: 0;
     color: #8b7969;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 20px;
 }
 
 .modal__desc {
     margin: 0;
-    color: #4a3f37;
-    font-size: 13px;
+    color: #8b7969;
+    font-size: 20px;
 }
 
-/* お問い合わせ内容だけ読みやすく */
 .modal__desc--detail {
     white-space: pre-wrap;
-    /* 改行を保持 */
     line-height: 1.7;
 }
 
-/* ===== 下部ボタン ===== */
 .modal__actions {
-    margin-top: 28px;
+    margin-top: 114px;
     display: flex;
     justify-content: center;
 }
@@ -275,9 +305,8 @@ table td:last-of-type {
 .modal__delete {
     padding: 8px 22px;
     background: #b24a3a;
-    /* スクショの赤系 */
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 18px;
 }

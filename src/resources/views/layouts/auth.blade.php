@@ -15,9 +15,9 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a href="/" class="header__logo">
+            <h1 class="header__logo">
                 FashionablyLate
-            </a>
+            </h1>
             <div class="header__auth">
                 @if (request()->routeIs('login'))
                     <a href="{{ route('register') }}" class="header__button">Register</a>

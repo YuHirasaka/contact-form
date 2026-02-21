@@ -14,49 +14,48 @@
 
     <form class="admin__search" action="/search" method="get">
         <div class="admin__search-inner">
-            <!--名前、アドレス検索-->
             <input class="admin__input admin__input--text"
                     type="text"
                     name="keyword"
                     value="{{ request('keyword') }}"
                     placeholder="名前やメールアドレスを入力してください">
-            <!--性別検索-->
-            <select name="gender" class="admin__select admin__select--gender">
-                <option value="" disabled {{ request()->has('gender') ? '' : 'selected'}}>
-                性別
-                </option>
-                <option value="all" {{ request('gender') === 'all' ? 'selected' : '' }}>全て</option>
-                <option value="1" {{ request('gender') == 1 ? 'selected' : '' }}>男性</option>
-                <option value="2" {{ request('gender') == 2 ? 'selected' : '' }}>女性</option>
-                <option value="3" {{ request('gender') == 3 ? 'selected' : '' }}>その他</option>
-            </select>
-            <!--カテゴリ検索-->
-            <select name="category_id" class="admin__select admin__select--category">
-                <option value="" disabled {{ request()->has('category_id') ? '' : 'selected' }}>お問い合わせの種類</option>
-                <option value="all" {{ request('category_id') === 'all' ? 'selected' : '' }}>全て</option>
-                @foreach ($categories as $category)
-                <option value="{{ $category->id }}"
-                    {{ request('category_id') == $category->id ? 'selected' : '' }}>
-                    {{ $category->content }}
-                </option>
-                @endforeach
-            </select>
-            <!--日付検索-->
-            <input class="admin__input admin__input--date"
-                    type="date"
-                    name="date"
-                    value="(( request('date') }}">
-            <!--検索ボタン-->
+            <div class="select-wrapper">
+                <select name="gender" class="admin__select admin__select--gender">
+                    <option value="" disabled {{ request()->has('gender') ? '' : 'selected'}}>
+                    性別
+                    </option>
+                    <option value="all" {{ request('gender') === 'all' ? 'selected' : '' }}>全て</option>
+                    <option value="1" {{ request('gender') == 1 ? 'selected' : '' }}>男性</option>
+                    <option value="2" {{ request('gender') == 2 ? 'selected' : '' }}>女性</option>
+                    <option value="3" {{ request('gender') == 3 ? 'selected' : '' }}>その他</option>
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <select name="category_id" class="admin__select admin__select--category">
+                    <option value="" disabled {{ request()->has('category_id') ? '' : 'selected' }}>お問い合わせの種類</option>
+                    <option value="all" {{ request('category_id') === 'all' ? 'selected' : '' }}>全て</option>
+                    @foreach ($categories as $category)
+                    <option value="{{ $category->id }}"
+                        {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                        {{ $category->content }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <input class="admin__input admin__input--date"
+                        type="date"
+                        name="date"
+                        value="{{ request('date') }}">
+            </div>
             <button class="admin__button admin__button--search" type="submit">検索</button>
-            <!--リセットボタン-->
             <a class="admin__button admin__button--reset" href="/reset">リセット</a>
         </div>
     </form>
 
-    <div class="admin__toolber">
-        <a href="{{ route('admin.export', request()->except('page')) }}" class="admin__button admin__button--export">エクスポート</a>
+    <div class="admin__toolbar">
+        <a href="{{ route('admin.export', request()->except('page')) }}" class="admin__button--export">エクスポート</a>
         <nav class="admin__pagination">
-            <!--リンク -->
             <div class="admin__pagination-page">
                 {{ $contacts->links() }}
             </div>
