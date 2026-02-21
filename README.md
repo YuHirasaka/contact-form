@@ -22,10 +22,10 @@
 
 ## 使用技術
 
-- php　8.1
+- php 8.1.34
 - nginx 1.21.1
-- mysql 8.0
-- laravel 8.75
+- mysql 8.0.26
+- laravel 8.83.29
 
 ---
 
