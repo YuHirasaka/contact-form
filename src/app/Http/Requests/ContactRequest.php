@@ -28,21 +28,15 @@ class ContactRequest extends FormRequest
             'last_name' => 'required|string',
             'gender' => 'required',
             'email' => 'required|email',
-            'tel' => 'required|digits_between:10,11',
+            'tel' => 'array|size:3',
+            'tel.*' => 'required|regex:/^[0-9]+$/|max:5',
             'address' => 'required|string',
+            'building' => 'nullable|string|max:225',
             'category_id' => 'required',
             'detail' => 'required|string|max:120',
         ];
     }
-    public function prepareForValidation()
-    {
-        $tel = ($this->input('phone1')) .
-                ($this->input('phone2')) .
-                ($this->input('phone3'));
-        $this->merge([
-            'tel' => $tel,
-        ]);
-    }
+
     public function messages()
     {
         return [
@@ -51,8 +45,9 @@ class ContactRequest extends FormRequest
             'gender.required' => '性別を選択してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスはメール形式で入力してください',
-            'tel.required' => '電話番号を入力してください',
-            'tel.digits_between' => '電話番号を入力してください',
+            'tel.*.required' => '電話番号を入力してください',
+            'tel.*.regex' => '電話番号は半角英数字で入力してください',
+            'tel.*.max' => '電話番号は５桁まで数字で入力してください',
             'address.required' => '住所を入力してください',
             'category_id.required' => 'お問い合わせの種類を選択してください',
             'detail.required' => 'お問い合わせ内容を入力してください',
