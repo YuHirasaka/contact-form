@@ -96,8 +96,44 @@
     align-items: center
 }
 
-.admin__pagination {}
 
+/* =========================
+   Pagination
+========================= */
+
+.admin__pagination {
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination li a,
+.pagination li span {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #e0dfde;
+    border-right: none;
+    color: #8b7969;
+    font-size: 18px;
+    text-decoration: none;
+}
+.pagination li:last-child a,
+.pagination li:last-child span {
+    border-right: 1px solid #e0dfde;
+}
+
+.pagination li.active span {
+    background: #8b7969;
+    color: #fff;
+}
+
+.pagination li.disabled span {
+    opacity: 0.4;
+}
 
 /* =========================
    Table
