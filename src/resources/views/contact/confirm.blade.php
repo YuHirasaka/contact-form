@@ -15,52 +15,81 @@
             <table class="confirm-table__inner">
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お名前</th>
-                    <td class="confirm-table__text">
-                        <input type="text" name="last_name" value="{{ $contact['last_name'] }}">
-                        <input type="text" name="first_name" value="{{ $contact['first_name'] }}">
+                    <td class="confirm-table__text confirm-table__name">
+                        <span class="confirm-table__value">
+                            {{ $contact['last_name']}}
+                        </span>
+                        <span class="confirm-table__value">
+                            {{ $contact['first_name']}}
+                        </span>
+                        <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
+                        <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly>
+                        <span class="confirm-table__value">
+                            {{ $contact['gender_label'] }}
+                        </span>
+                        <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">メールアドレス</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="email" value="{{ $contact['email'] }}" readonly>
+                        <span class="confirm-table__value">
+                            {{ $contact['email'] }}
+                        </span>
+                        <input type="hidden" name="email" value="{{ $contact['email'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">電話番号</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
+                        <span class="confirm-table__value">
+                            {{ $contact['tel_joined'] }}
+                        </span>
+                        @foreach ($contact['tel'] as $i => $part)
+                            <input type="hidden" name="tel[{{ $i }}]" value="{{ $part }}">
+                        @endforeach
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header"></th>
                     <td class="confirm-table__text">
-                        <input type="text" name="address" value="{{ $contact['address']}}" readonly>
+                        <span class="confirm-table__value">
+                            {{ $contact['address' ]}}
+                        </span>
+                        <input type="hidden" name="address" value="{{ $contact['address']}}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header"></th>
                     <td class="confirm-table__text">
-                        <input type="text" name="building" value="{{ $contact['building']}}" readonly>
+                        <span class="confirm-table__value">
+                            {{ $contact['building' ]}}
+                        </span>
+                        <input type="hidden" name="building" value="{{ $contact['building']}}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">
                     </th>
                     <td class="confirm-table__text">
-                        <input type="text" name="category_id" value="{{ $category->content }}" readonly>
+                        <span class="confirm-table__value">
+                            {{ $category->content }}
+                        </span>
+                        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header"></th>
                     <td class="confirm-table__text">
-                        <input type="text" name="detail" value="{{ $contact['detail']}}" readonly>
+                        <span class="confirm-table__value">
+                            {{ $contact['detail' ]}}
+                        </span>
+                        <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
                     </td>
                 </tr>
             </table>
