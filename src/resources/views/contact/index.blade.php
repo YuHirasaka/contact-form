@@ -9,7 +9,7 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form action="/confirm" class="form" method="post">
+    <form action="/confirm" class="form" method="post" novalidate>
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -84,14 +84,14 @@
             </div>
             <div class="form__group-content">
                 <div class="form__field form__field--tel">
-                    <input class="form__item-input" type="tel" inputmode="numeric" name="phone1" placeholder="080" value="{{ old('phone1') }}">
+                    <input class="form__item-input" type="tel" inputmode="numeric" name="tel[]" placeholder="080" value="{{ old('tel.0') }}">
                     <span class="form__sep">-</span>
-                    <input class="form__item-input" type="tel" inputmode="numeric" name="phone2" placeholder="1234" value="{{ old('phone2') }}">
+                    <input class="form__item-input" type="tel" inputmode="numeric" name="tel[]" placeholder="1234" value="{{ old('tel.1') }}">
                     <span class="form__sep">-</span>
-                    <input class="form__item-input" type="tel" inputmode="numeric" name="phone3" placeholder="5678" value="{{ old('phone3') }}">
+                    <input class="form__item-input" type="tel" inputmode="numeric" name="tel[]" placeholder="5678" value="{{ old('tel.2') }}">
                 </div>
                 <div class="form__error">
-                    @error('tel')
+                    @error('tel.*')
                     {{ $message }}
                     @enderror
                 </div>
