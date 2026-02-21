@@ -37,4 +37,4 @@
 
 ## ER図
 
-![ER図](docs/index.drawio.png)
+![ER図](docs/index.png)
