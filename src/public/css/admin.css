@@ -185,3 +185,99 @@ table td:last-of-type {
     color: #d9c6b5;
     margin-right: 0;
 }
+
+/* ===== Modal base ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.modal__panel {
+    position: relative;
+    width: 805px;
+    max-width: calc(100% - 48px);
+    margin: 50px auto;
+    background: #fff;
+    border: 1px solid #e6ded7;
+    padding: 60px 70px;
+    /* 上下左右の余白感 */
+}
+
+/* ×ボタン（右上の丸） */
+.modal__close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #cfc7c0;
+    background: #fff;
+    color: #8b7969;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* ===== 内容（2列の整列） ===== */
+.modal__list {
+    margin: 0;
+    padding: 0;
+}
+
+.modal__row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    /* 左列固定、右列伸びる */
+    align-items: start;
+    column-gap: 40px;
+    padding: 14px 0;
+}
+
+.modal__term {
+    margin: 0;
+    color: #8b7969;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.modal__desc {
+    margin: 0;
+    color: #4a3f37;
+    font-size: 13px;
+}
+
+/* お問い合わせ内容だけ読みやすく */
+.modal__desc--detail {
+    white-space: pre-wrap;
+    /* 改行を保持 */
+    line-height: 1.7;
+}
+
+/* ===== 下部ボタン ===== */
+.modal__actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal__delete {
+    padding: 8px 22px;
+    background: #b24a3a;
+    /* スクショの赤系 */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
