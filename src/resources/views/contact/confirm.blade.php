@@ -56,7 +56,7 @@
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
-                    <th class="confirm-table__header"></th>
+                    <th class="confirm-table__header">住所</th>
                     <td class="confirm-table__text">
                         <span class="confirm-table__value">
                             {{ $contact['address' ]}}
@@ -65,7 +65,7 @@
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
-                    <th class="confirm-table__header"></th>
+                    <th class="confirm-table__header">建物名</th>
                     <td class="confirm-table__text">
                         <span class="confirm-table__value">
                             {{ $contact['building' ]}}
@@ -74,8 +74,7 @@
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
-                    <th class="confirm-table__header">
-                    </th>
+                    <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
                         <span class="confirm-table__value">
                             {{ $category->content }}
@@ -84,7 +83,7 @@
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
-                    <th class="confirm-table__header"></th>
+                    <th class="confirm-table__header">お問い合わせ内容</th>
                     <td class="confirm-table__text">
                         <span class="confirm-table__value">
                             {!! nl2br(e($contact['detail'])) !!}
