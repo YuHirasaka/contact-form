@@ -33,8 +33,8 @@ class ContactFactory extends Factory
 
 
         return [
-            'first_name' => $this->faker->lastName,
-            'last_name' => $firstName,
+            'last_name' => $this->faker->lastName,
+            'first_name' => $firstName,
             'gender' => $gender,
             'email' => $this->faker->safeEmail,
             'tel' => $this->faker->numerify('080########'),
