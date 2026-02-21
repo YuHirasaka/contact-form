@@ -8,27 +8,44 @@
 
 .thanks__bg {
     position: absolute;
-    font-size: 260px;
-    color: rgba(139, 121, 105, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1381px;
+    height: 365px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 0;
+}
+
+.thanks__bg h1 {
+    margin: 0;
+    font-size: 280px;
+    font-weight: 400;
+    color: rgba(139, 121, 105, 0.1);
+    font-family: "Inika", serif;
 }
 
 .thanks__content {
     position: relative;
     z-index: 10;
     text-align: center;
+    transform: translateY(10px);
 }
 
 .thanks__message {
     font-size: 30px;
     font-weight: bold;
     color: #8b7969;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 .thanks__btn {
-    padding: 10px 30px;
+    display: inline-block;
+    padding: 10px 40px;
     background: #8b7969;
     color: #fff;
+    font: 20px "Inika", serif;
     text-decoration: none;
 }

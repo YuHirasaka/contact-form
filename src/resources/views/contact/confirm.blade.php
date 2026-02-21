@@ -87,16 +87,16 @@
                     <th class="confirm-table__header"></th>
                     <td class="confirm-table__text">
                         <span class="confirm-table__value">
-                            {{ $contact['detail' ]}}
+                            {!! nl2br(e($contact['detail'])) !!}
                         </span>
                         <input type="hidden" name="detail" value="{{ $contact['detail'] }}">
                     </td>
                 </tr>
             </table>
         </div>
-        <div class="form__btn">
-            <button class="form__btn-submit" type="submit" name="action" value="submit">送信</button>
-            <button class="form__btn-back" type="submit" name="action" value="back">修正</button>
+        <div class="form__button">
+            <button class="form__button-submit" type="submit" name="action" value="submit">送信</button>
+            <button class="form__button-back" type="submit" name="action" value="back">修正</button>
         </div>
     </form>
 </div>

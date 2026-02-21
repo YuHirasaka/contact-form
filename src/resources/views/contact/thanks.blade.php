@@ -6,7 +6,9 @@
 
 @section('content')
 <section class="thanks">
-    <h1 class="thanks__bg">Thank you</h1>
+    <div class="thanks__bg">
+        <h1>Thank you</h1>
+    </div>
 
     <div class="thanks__content">
         <p class="thanks__message">

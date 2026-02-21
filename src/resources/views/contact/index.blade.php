@@ -129,7 +129,7 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <div class="form__item">
+                <div class="form__item form__item--select">
                     <select name="category_id" class="form__item-select">
                         <option value="" disabled {{ old('category_id') ? '' : 'selected' }}>選択してください</option>
                         @foreach ($categories as $category)

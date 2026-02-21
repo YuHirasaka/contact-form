@@ -1,11 +1,10 @@
 .contact-form__content {
     margin: 0 auto;
-    padding: 20px 15px;
     max-width: 1512px;
 }
 
 .contact-form__heading h2 {
-    margin-bottom: 50px;
+    margin: 50px 0;
     text-align: center;
     font-size: 35px;
     font-weight: normal;
@@ -37,8 +36,6 @@
 
 .form__label {
     color: #8b7976;
-    width: 25%;
-    text-align: left;
 }
 
 .form__label--required {
@@ -57,6 +54,10 @@ select {
     padding: 10px 20px;
 }
 
+textarea {
+    resize: none;
+}
+
 .form__field {
     display: flex;
     align-items: center;
@@ -64,16 +65,15 @@ select {
 .form__field--name {
     width: 100%;
     gap: 40px;
-    flex: 1;
-}
-.form__field--tel input {
-    flex:1;
-    text-align: center;
 }
 
-/* ===============================
-   Item (input wrapper)
-=============================== */
+.form__field--tel {
+    gap: 10px;
+}
+
+.form__field--tel input {
+    text-align: center;
+}
 
 .form__item {
     display: flex;
@@ -81,22 +81,39 @@ select {
     width: 100%;
 }
 
-.form__item-input {
-    width: 100%;
+.form__item--select {
+    position: relative;
+    width: 50%;
+}
+
+.form__item--select::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #beb1a6;
+
+    pointer-events: none;
 }
 
 .form__item-select {
-    width: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    padding-right: 60px;
+    border: none;
+    cursor: pointer;
 }
 
 .form__item-textarea {
     height: 180px;
 }
-
-
-/* ===============================
-   Radio
-=============================== */
 
 .form__radio {
     display: flex;
@@ -107,8 +124,6 @@ select {
 .form__radio-item {
     display: inline-flex;
     align-items: center;
-    margin-right: 6px;
-    white-space: nowrap;
     color: #8b7969;
 }
 
@@ -122,26 +137,17 @@ select {
     border: 1px solid #8b7969;
     border-radius: 50%;
     background: #fff;
+    margin-right: 8px;
     cursor: pointer;
 }
 .form__radio-item input:checked {
     background-color: #8b7969;
 }
 
-/* ===============================
-   Separator
-=============================== */
-
 .form__sep {
     flex: 0 0 auto;
     margin: 0 10px;
-    align-items: center
 }
-
-
-/* ===============================
-   Error
-=============================== */
 
 .form__error {
     margin-top: 6px;
@@ -149,11 +155,6 @@ select {
     text-align: left;
     color: #ff0000;
 }
-
-
-/* ===============================
-   Actions
-=============================== */
 
 .form__actions {
     text-align: center;

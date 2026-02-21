@@ -3,6 +3,7 @@ body {
         sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #8b7976;
 }
 .header {
     background: #fff;
@@ -11,23 +12,18 @@ body {
 .header__inner {
     position: relative;
     margin: 0 auto;
-    padding: 10px 15px;
+    height: 100px;
+    line-height: 100px;
     max-width: 1512px;
     border-bottom: 1px solid #e0dfde;
     text-align: center;
     font-family: "Inika",serif;
 }
 
-.header__logo a {
-    color: #8b7976;
-    font-size: 40px;
-    text-decoration: none;
-}
-
 .header__logo {
-    color: #8b7976;
+    margin: 0;
     font-size: 40px;
-    text-decoration: none;
+    font-weight: normal;
 }
 
 .header__auth {
@@ -47,7 +43,7 @@ body {
     font-family: "Inika",serif;
     font-size: 20px;
     border: 1px solid #d9c6b5;
-    padding: 5px 20px;
+    padding: 5px 15px;
     cursor: pointer;
     text-decoration: none;
 }
