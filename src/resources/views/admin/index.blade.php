@@ -8,7 +8,7 @@
 <div class="admin">
     <div class="admin__heading">
         <div class="admin__title">
-            <h2>Admin</h2>
+            <h1>Admin</h1>
         </div>
     </div>
 

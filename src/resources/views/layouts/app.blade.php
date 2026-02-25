@@ -16,9 +16,9 @@
     @if (!request()->routeIs('contact.thanks'))
     <header class="header">
         <div class="header__inner">
-            <h1 class="header__logo">
+            <p class="header__logo">
                 FashionablyLate
-            </h1>
+            </p>
         </div>
     </header>
     @endif

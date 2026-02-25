@@ -9,7 +9,7 @@ body {
     max-width: 1512px;
 }
 
-.confirm__heading h2 {
+.confirm__heading h1 {
     margin-bottom: 50px;
     text-align: center;
     font-size: 35px;

@@ -8,7 +8,7 @@
 <div class="auth">
     <div class="auth__heading">
         <div class="auth__title">
-            <h2>Register</h2>
+            <h1>Register</h1>
         </div>
     </div>
     <div class="auth-card">
