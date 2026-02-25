@@ -7,7 +7,6 @@ use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
 
-
 class ContactController extends Controller
 {
     public function index()
