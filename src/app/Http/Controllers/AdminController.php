@@ -113,6 +113,6 @@ class AdminController extends Controller
                 });
 
             fclose($handle);
-         }, $fileName, $headers);
-        }
+        }, $fileName, $headers);
+    }
 }

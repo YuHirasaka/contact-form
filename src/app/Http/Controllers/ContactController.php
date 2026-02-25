@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\requests\ContactRequest;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
 
