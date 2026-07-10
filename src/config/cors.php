@@ -19,7 +19,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    // React（Vite）の開発サーバーから API を呼ぶために許可
+    // Blade 版は同一オリジン（localhost）なので CORS は不要でした
+    'allowed_origins' => [
+        'http://localhost:5173',
+    ],
 
     'allowed_origins_patterns' => [],
 
