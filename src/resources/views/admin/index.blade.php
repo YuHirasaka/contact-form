@@ -108,10 +108,10 @@
             </tbody>
             @endforeach
         </table>
-        <div class="modal js-modal" aria-hidden="true">
+        <div class="modal js-modal" aria-hidden="true"> <!-- aria-hidden="true"はモーダルウィンドウが非表示の場合に設定されます。-->
             <div class="modal__overlay js-close-modal"></div>
-            <div class="modal__panel" role="dialog" aria-modal="true">
-                <button type="button" class="modal__close js-close-modal" aria-label="閉じる">×</button>
+            <div class="modal__panel" role="dialog" aria-modal="true"> <!-- aria-modal="true"はモーダルウィンドウが表示されている場合に設定されます。-->
+                <button type="button" class="modal__close js-close-modal" aria-label="閉じる">×</button> <!-- aria-label="閉じる"はモーダルウィンドウを閉じるボタンにアクセシビリティラベルを設定しています。-->
                 <dl class="modal__list">
                     <div class="modal__row">
                         <dt class="modal__term">お名前</dt>
@@ -157,25 +157,25 @@
                 </div>
             </div>
         </div>
-        <script>
+        <script> //モーダルウィンドウの操作を行うためのJavaScriptコードです。
         document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.querySelector('.js-modal');
+        const modal = document.querySelector('.js-modal'); //モーダルウィンドウの要素を取得しています。
         if (!modal) return;
 
-        const openButtons = document.querySelectorAll('.js-open-modal');
-        const closeButtons = document.querySelectorAll('.js-close-modal');
+        const openButtons = document.querySelectorAll('.js-open-modal'); //モーダルウィンドウを開くボタンの要素を取得しています。
+        const closeButtons = document.querySelectorAll('.js-close-modal'); //モーダルウィンドウを閉じるボタンの要素を取得しています。
 
-        const setText = (selector, text) => {
+        const setText = (selector, text) => { //モーダルウィンドウのテキストを設定するための関数です。
             const el = modal.querySelector(selector);
             if (el) el.textContent = text ?? '';
-        };
+        }; //el.textContent = text ?? '';はテキストを設定するためのコードです。?? ''はテキストが存在しない場合は空文字を返すようにしています。
 
-        const setVal = (selector, val) => {
+        const setVal = (selector, val) => { //モーダルウィンドウの値を設定するための関数です。
             const el = modal.querySelector(selector);
             if (el) el.value = val ?? '';
-        };
+        }; //el.value = val ?? '';は値を設定するためのコードです。?? ''は値が存在しない場合は空文字を返すようにしています。
 
-        const openModal = (btn) => {
+        const openModal = (btn) => { //モーダルウィンドウを開くための関数です。
             setText('.js-modal-name', btn.dataset.name);
             setText('.js-modal-gender', btn.dataset.gender);
             setText('.js-modal-email', btn.dataset.email);
@@ -188,19 +188,19 @@
 
             modal.classList.add('is-open');
             modal.setAttribute('aria-hidden', 'false');
-        };
+        }; // modal.classList.add('is-open') と modal.setAttribute('aria-hidden', 'false') はモーダルウィンドウを表示するためのコードです。
 
-        const closeModal = () => {
+        const closeModal = () => { //モーダルウィンドウを閉じるための関数です。
             modal.classList.remove('is-open');
             modal.setAttribute('aria-hidden', 'true');
-        };
+        }; //modal.classList.remove('is-open');はモーダルウィンドウを非表示にするためのコードです。
 
-        openButtons.forEach(btn => btn.addEventListener('click', () => openModal(btn)));
-        closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+        openButtons.forEach(btn => btn.addEventListener('click', () => openModal(btn))); //openModal(btn)はモーダルウィンドウを開くための関数です。
+        closeButtons.forEach(btn => btn.addEventListener('click', closeModal)); //closeModal()はモーダルウィンドウを閉じるための関数です。
 
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', (e) => { //エスケープキーを押した場合にモーダルウィンドウを閉じるためのコードです。
             if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-        });
+        }); //e.key === 'Escape' && modal.classList.contains('is-open')はエスケープキーを押した場合にモーダルウィンドウを閉じるためのコードです。
         });
         </script>
     </div>

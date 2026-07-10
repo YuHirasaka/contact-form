@@ -106,7 +106,7 @@ class AdminController extends Controller
                             optional($c->created_at)->format('Y-m-d H:i:s'),
                         ];
 
-                        mb_convert_variables('SJIS-win', 'UTF-8', $row);
+                        mb_convert_variables('SJIS-win', 'UTF-8', $row); //CSVファイルの文字コードをShift_JISに変換しています。
                         fputcsv($handle, $row);
                     }
                 });
